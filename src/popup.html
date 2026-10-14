@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>岗位收集箱</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div>
+          <p class="eyebrow">BOSS 直聘 · 手动收集</p>
+          <h1>岗位收集箱</h1>
+        </div>
+        <span id="count" class="count" aria-label="已收集岗位数">0</span>
+      </header>
+
+      <section class="capture" aria-labelledby="capture-title">
+        <h2 id="capture-title">当前职位</h2>
+        <p class="hint">打开独立职位详情页后，点击提取并核对信息。</p>
+        <button id="extract-button" class="button primary" type="button">提取当前职位</button>
+        <form id="preview-form" class="preview" hidden>
+          <div class="fields">
+            <label>职位名称 <span class="required">*</span><input name="title" required></label>
+            <label>公司名称 <span class="required">*</span><input name="company" required></label>
+            <div class="field-pair">
+              <label>薪资<input name="salary"></label>
+              <label>工作地点<input name="location"></label>
+            </div>
+            <div class="field-pair">
+              <label>工作经验<input name="experience"></label>
+              <label>学历要求<input name="education"></label>
+            </div>
+            <label>职位描述<textarea name="description" rows="5"></textarea></label>
+            <label>职位链接 <span class="required">*</span><input name="url" type="url" required readonly></label>
+          </div>
+          <button id="save-button" class="button primary" type="submit">确认保存</button>
+        </form>
+      </section>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+
+      <section class="collection" aria-labelledby="collection-title">
+        <div class="section-heading">
+          <h2 id="collection-title">已收集岗位</h2>
+          <button id="export-button" class="button secondary" type="button" disabled>导出 CSV</button>
+        </div>
+        <p id="empty-message" class="empty">还没有岗位。先从当前职位开始收集。</p>
+        <ul id="job-list" class="job-list" aria-label="已收集岗位"></ul>
+      </section>
+
+      <footer>数据仅保存在当前浏览器。导出 CSV 可自行备份。</footer>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

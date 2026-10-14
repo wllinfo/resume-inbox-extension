@@ -1,0 +1,4 @@
+dist/
+.DS_Store
+# Local copies of authenticated BOSS pages may contain session parameters.
+example/

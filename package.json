@@ -1,0 +1,11 @@
+{
+  "name": "resume-inbox-extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "lint": "node --check src/popup.js && node --check src/extract.js && node --check src/jobs.js && node --check src/storage.js && node --check src/csv.js && node --check scripts/build.js",
+    "build": "node scripts/build.js"
+  }
+}

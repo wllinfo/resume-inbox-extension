@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "岗位收集箱",
+  "description": "手动收集当前 BOSS 直聘职位详情页，并导出 CSV。",
+  "version": "0.1.0",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "action": {
+    "default_title": "岗位收集箱",
+    "default_popup": "src/popup.html"
+  }
+}
